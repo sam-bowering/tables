@@ -1,9 +1,10 @@
 import React from 'react'
+import Body from './Body'
 
 const App = () => {
   return (
     <div>
-      <h1>React Development Has Begun!</h1>
+      <Body/>
     </div>
   )
 }
