@@ -10,7 +10,15 @@ class Body extends React.Component {
   }
 
   handleWelcomeFade = () => {
-    this.setState({ mouseOverWelcome: true, welcomeIsVisible: false })
+    this.setState({
+      mouseOverWelcome: true,
+      welcomeIsVisible: false,
+      menuIsVisible: true
+    })
+  }
+
+  handleMenuFade = () => {
+    this.setState({ menuIsVisible: false, welcomeIsVisible: true })
   }
 
   render () {
@@ -22,7 +30,7 @@ class Body extends React.Component {
           </div>
         }
         {this.state.menuIsVisible &&
-          <div>
+          <div onMouseLeave={this.handleMenuFade} style={{ width: '30vw', height: '60vh' }}>
             <Menu />
           </div>
         }

@@ -25,3 +25,56 @@
   font-size: 10vw;
   font-family: 'Dancing Script', cursive;
 }
+
+.menu-container {
+  height: 60vh;
+  width: 30vw;
+  background-color: white;
+  position: relative;
+  left: 35vw;
+  top: 20vh;
+  border-radius: 15px;
+}
+
+.menu-container span {
+  position: relative;
+  top: 5vh;
+  left: 4vw;
+  font-size: 5vw;
+  font-family: 'Dancing Script', cursive;
+}
+
+.button-container {
+  position: relative;
+  top: 5vh;
+}
+
+.button-container button {
+  position: relative;
+  top: 1.5vh;
+  left: 1.5vw;
+  width: 7vw;
+  height: 7vh;
+  margin: 1vw;
+}
+
+.button-container button:hover {
+  cursor: pointer;
+}
+
+.tables-container {
+  background-color: white;
+  height: 50vh;
+  width: 30vw;
+  position: relative;
+  top: 25vh;
+  left: 35vw;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.question-container p {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 2vw;
+  margin: 1vw;
+}
