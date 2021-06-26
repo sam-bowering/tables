@@ -29,14 +29,16 @@ class Question extends React.Component {
   }
 
   checkEntry = () => {
-    var answer = this.state.firstNum * this.state.secondNum
-    if (parseInt(this.state.entry[0]) === answer) {
+    this.setState({ answer: this.state.firstNum * this.state.secondNum })
+    if (parseInt(this.state.entry[0]) === this.state.answer) {
       this.setState({ isCorrect: true })
+      this.setState({ entry: '' })
+      setTimeout(this.resetQuestion, 500)
     } else {
       this.setState({ isCorrect: false })
+      this.setState({ entry: '' })
+      setTimeout(this.resetQuestion, 1500)
     }
-    this.setState({ entry: '' })
-    setTimeout(this.resetQuestion, 2000)
   }
 
   resetQuestion = () => {
@@ -58,7 +60,10 @@ class Question extends React.Component {
           <p className='answer-indicator'>Correct!</p>
         }
         {this.state.isCorrect === false &&
-          <p className='answer-indicator'>Incorrect!</p>
+          <>
+            <p className='answer-indicator'>Incorrect!</p>
+            <p className='answer-indicator'>The answer is: {this.state.answer}</p>
+          </>
         }
       </div>
     )
