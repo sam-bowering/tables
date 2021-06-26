@@ -29,8 +29,10 @@ class Question extends React.Component {
   }
 
   checkEntry = () => {
-    this.setState({ answer: this.state.firstNum * this.state.secondNum })
-    if (parseInt(this.state.entry[0]) === this.state.answer) {
+    // this.setState({ answer: this.state.firstNum * this.state.secondNum })
+    var answer = this.state.firstNum * this.state.secondNum
+    this.setState({ answer: answer })
+    if (parseInt(this.state.entry[0]) === answer) {
       this.setState({ isCorrect: true })
       this.setState({ entry: '' })
       setTimeout(this.resetQuestion, 500)
