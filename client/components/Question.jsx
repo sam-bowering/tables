@@ -1,10 +1,13 @@
 import React from 'react'
 import { Form } from 'semantic-ui-react'
+import { withRouter } from 'react-router'
 
 class Question extends React.Component {
   componentDidMount () {
-    this.setState({ firstNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)] })
-    this.setState({ secondNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)] })
+    this.setState({
+      firstNum: parseInt(this.props.match.params.selectedTable.substring(1)),
+      secondNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)]
+    })
   }
 
   state = {
@@ -42,13 +45,8 @@ class Question extends React.Component {
   }
 
   resetQuestion = () => {
-    this.generateQuestion()
-    this.setState({ isCorrect: undefined })
-  }
-
-  generateQuestion = () => {
-    this.setState({ firstNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)] })
     this.setState({ secondNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)] })
+    this.setState({ isCorrect: undefined })
   }
 
   render () {
@@ -70,4 +68,4 @@ class Question extends React.Component {
   }
 }
 
-export default Question
+export default withRouter(Question)
