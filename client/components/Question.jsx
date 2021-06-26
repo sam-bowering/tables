@@ -8,12 +8,11 @@ class Question extends React.Component {
   }
   // vvv Placeholder for backend vvv
   state = {
-    entry: '',
     numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     firstNum: '',
     secondNum: '',
+    entry: '',
     answer: '',
-    correctAnswers: [32],
     isCorrect: undefined
   }
   // ^^^ Placeholder for backend (numbers and correctAnswers) ^^^
