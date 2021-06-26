@@ -37,6 +37,8 @@ class Question extends React.Component {
       this.setState({ isCorrect: false })
     }
     this.setState({ entry: '' })
+    this.generateQuestion()
+    // this.setState({ isCorrect: undefined })
   }
 
   generateQuestion = () => {
