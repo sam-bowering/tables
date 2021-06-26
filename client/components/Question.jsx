@@ -6,7 +6,7 @@ class Question extends React.Component {
     this.setState({ firstNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)] })
     this.setState({ secondNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)] })
   }
-  // vvv Placeholder for backend vvv
+
   state = {
     numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     firstNum: '',
@@ -15,7 +15,6 @@ class Question extends React.Component {
     answer: '',
     isCorrect: undefined
   }
-  // ^^^ Placeholder for backend (numbers and correctAnswers) ^^^
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: [e.target.value] })
@@ -29,7 +28,6 @@ class Question extends React.Component {
   }
 
   checkEntry = () => {
-    // this.setState({ answer: this.state.firstNum * this.state.secondNum })
     var answer = this.state.firstNum * this.state.secondNum
     this.setState({ answer: answer })
     if (parseInt(this.state.entry[0]) === answer) {

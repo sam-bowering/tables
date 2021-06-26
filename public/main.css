@@ -78,3 +78,11 @@
   font-size: 2vw;
   margin: 1vw;
 }
+
+.home-button {
+  position: absolute;
+  top: 2.5vh;
+  left: 2.5vw;
+  height: 5vh;
+  width: 5vw;
+}
