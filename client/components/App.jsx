@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Router>
       <Route path='/' exact component={Body} />
-      <Route path='/tables' exact component={Tables} />
+      <Route path='/tables/:selectedTable' exact component={Tables} />
     </Router>
   )
 }
