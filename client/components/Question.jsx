@@ -37,8 +37,12 @@ class Question extends React.Component {
       this.setState({ isCorrect: false })
     }
     this.setState({ entry: '' })
+    setTimeout(this.resetQuestion, 2000)
+  }
+
+  resetQuestion = () => {
     this.generateQuestion()
-    // this.setState({ isCorrect: undefined })
+    this.setState({ isCorrect: undefined })
   }
 
   generateQuestion = () => {
