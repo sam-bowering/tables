@@ -1,6 +1,7 @@
 import React from 'react'
 import Welcome from './Welcome'
 import Menu from './Menu'
+import Choice from './Choice'
 
 class Body extends React.Component {
   state = {
@@ -31,7 +32,8 @@ class Body extends React.Component {
         }
         {this.state.menuIsVisible &&
           <div onMouseLeave={this.handleMenuFade} style={{ width: '30vw', height: '60vh' }}>
-            <Menu />
+            {/* <Menu /> */}
+            <Choice />
           </div>
         }
       </div>

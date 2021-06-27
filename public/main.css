@@ -86,3 +86,33 @@
   height: 5vh;
   width: 5vw;
 }
+
+.choice-container {
+  height: 60vh;
+  width: 30vw;
+  background-color: white;
+  position: relative;
+  left: 35vw;
+  top: 20vh;
+  border-radius: 15px;
+}
+
+.choice-container h1 {
+  height: 35vh;
+  width: 15vw;
+  position: relative;
+  display: inline-block;
+  font-family: 'Dancing Script', cursive;
+  font-size: 5vh;
+  padding-top: 25vh;
+  border-radius: 15px;
+  text-align: center;
+  color: black;
+  transition: 0.5s;
+}
+
+.choice-container h1:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}

@@ -8,11 +8,13 @@ class Menu extends React.Component {
 
   render () {
     return (
-      <div className='menu-container'>
-        <span>Choose Table</span>
-        <div className='button-container'>
-          {this.state.tables.map(i =>
-            <Link key={i} to={`/tables/:${i}`}><button type='button'>{i}</button></Link>)}
+      <div className='container'>
+        <div className='menu-container'>
+          <span>Choose Table</span>
+          <div className='button-container'>
+            {this.state.tables.map(i =>
+              <Link key={i} to={`/tables/:${i}`}><button type='button'>{i}</button></Link>)}
+          </div>
         </div>
       </div>
     )
