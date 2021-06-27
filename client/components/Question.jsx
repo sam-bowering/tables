@@ -34,12 +34,10 @@ class Question extends React.Component {
     var answer = this.state.firstNum * this.state.secondNum
     this.setState({ answer: answer })
     if (parseInt(this.state.entry[0]) === answer) {
-      this.setState({ isCorrect: true })
-      this.setState({ entry: '' })
+      this.setState({ isCorrect: true, entry: '' })
       setTimeout(this.resetQuestion, 500)
     } else {
-      this.setState({ isCorrect: false })
-      this.setState({ entry: '' })
+      this.setState({ isCorrect: false, entry: '' })
       setTimeout(this.resetQuestion, 1500)
     }
   }
