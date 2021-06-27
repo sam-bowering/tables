@@ -1,4 +1,5 @@
 import React from 'react'
+import Home from './Home'
 import { Link } from 'react-router-dom'
 
 class Menu extends React.Component {
@@ -9,6 +10,7 @@ class Menu extends React.Component {
   render () {
     return (
       <div className='container'>
+        <Home />
         <div className='menu-container'>
           <span>Choose Table</span>
           <div className='button-container'>

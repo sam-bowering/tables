@@ -1,4 +1,5 @@
 import React from 'react'
+import Home from './Home'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Form } from 'semantic-ui-react'
@@ -51,7 +52,7 @@ class Tables extends React.Component {
   render () {
     return (
       <div className='container'>
-        <Link to='/'><button type='button' className='home-button'>Home</button></Link>
+        <Home />
         <div className='tables-container'>
           <div className='question-container' onKeyDown={this.handleEnter}>
             <p>What is {this.state.firstNum} x {this.state.secondNum}?</p>
