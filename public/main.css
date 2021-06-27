@@ -116,3 +116,13 @@
   color: white;
   cursor: pointer;
 }
+
+.fractions-container {
+  height: 60vh;
+  width: 30vw;
+  background-color: white;
+  position: relative;
+  left: 35vw;
+  top: 20vh;
+  border-radius: 15px;
+}
