@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 class Menu extends React.Component {
   state = {
-    tables: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    tables: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   }
 
   render () {

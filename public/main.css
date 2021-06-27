@@ -51,7 +51,7 @@
 
 .button-container button {
   position: relative;
-  top: 1.5vh;
+  bottom: 1vh;
   left: 1.5vw;
   width: 7vw;
   height: 7vh;

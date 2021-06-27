@@ -1,6 +1,5 @@
 import React from 'react'
 import Home from './Home'
-import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Form } from 'semantic-ui-react'
 
@@ -13,7 +12,7 @@ class Tables extends React.Component {
   }
 
   state = {
-    numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     firstNum: '',
     secondNum: '',
     entry: '',
