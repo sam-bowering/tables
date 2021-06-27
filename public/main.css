@@ -117,7 +117,7 @@
   cursor: pointer;
 }
 
-.fractions-container {
+.percentages-container {
   height: 60vh;
   width: 30vw;
   background-color: white;
@@ -125,4 +125,5 @@
   left: 35vw;
   top: 20vh;
   border-radius: 15px;
+  display: inline-block;
 }

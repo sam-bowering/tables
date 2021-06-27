@@ -1,12 +1,12 @@
 import React from 'react'
 
-class Fractions extends React.Component {
+class Percentages extends React.Component {
   render () {
     return (
       <div className='container'>
-        <div className='fractions-container'>
+        <div className='percentages-container'>
           <div className='question-container'>
-            <p>What is 1/2 of 24?</p>
+            <p>What is 50% of 24?</p>
           </div>
         </div>
       </div>
@@ -14,4 +14,4 @@ class Fractions extends React.Component {
   }
 }
 
-export default Fractions
+export default Percentages
