@@ -6,27 +6,31 @@ import { Form } from 'semantic-ui-react'
 
 class Tables extends React.Component {
   componentDidMount () {
+    var firstNum = parseInt(this.props.match.params.selectedTable.substring(1))
+    var secondNum = this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)]
     this.setState({
-      firstNum: parseInt(this.props.match.params.selectedTable.substring(1)),
-      secondNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)]
+      firstNum,
+      secondNum,
+      answer: firstNum * secondNum
     })
   }
 
   state = {
     numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    firstNum: '',
-    secondNum: '',
+    firstNum: undefined,
+    secondNum: undefined,
     entry: '',
-    answer: '',
+    answer: undefined,
     isCorrect: undefined,
-    score: 0,
-    completed: []
+    score: 0
   }
 
+  // 1. User Enters Answer
   handleChange = (e) => {
     this.setState({ [e.target.name]: [e.target.value] })
   }
 
+  // 2. User Submits Answer - Calls checkEntry
   handleEnter = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault()
@@ -34,25 +38,21 @@ class Tables extends React.Component {
     }
   }
 
+  // 3. Handles All Answering Functionality - Calls generateQuestion
   checkEntry = () => {
     var answer = this.state.firstNum * this.state.secondNum
     if (parseInt(this.state.entry[0]) === answer) {
       this.setState({ isCorrect: true, entry: '', score: this.state.score + 10 })
+      this.updateNumbers()
       setTimeout(this.generateQuestion, 500)
     } else {
       this.setState({ isCorrect: false, entry: '', score: this.state.score - 5 })
+      this.updateNumbers()
       setTimeout(this.generateQuestion, 1500)
     }
   }
 
-  generateQuestion = () => {
-    this.updateNumbers()
-    this.setState({ secondNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)] })
-    this.setState({ isCorrect: undefined })
-    var answer = this.state.firstNum * this.state.secondNum
-    this.setState({ answer: answer })
-  }
-
+  // 3.5. Updates Number Array - Calls generateQuestion Also
   updateNumbers = () => {
     if (this.state.numbers.length > 1) {
       this.setState({ numbers: [...this.state.numbers.filter(num => num !== this.state.secondNum)] })
@@ -60,6 +60,14 @@ class Tables extends React.Component {
       this.setState({ numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] })
       this.generateQuestion()
     }
+  }
+
+  // 4. Creates New Question
+  generateQuestion = () => {
+    this.setState({ secondNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)] })
+    this.setState({ isCorrect: undefined })
+    var answer = this.state.firstNum * this.state.secondNum
+    this.setState({ answer: answer })
   }
 
   render () {
