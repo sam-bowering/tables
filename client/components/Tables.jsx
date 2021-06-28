@@ -1,5 +1,6 @@
 import React from 'react'
 import Home from './Home'
+import Score from './Score'
 import { withRouter } from 'react-router'
 import { Form } from 'semantic-ui-react'
 
@@ -17,7 +18,8 @@ class Tables extends React.Component {
     secondNum: '',
     entry: '',
     answer: '',
-    isCorrect: undefined
+    isCorrect: undefined,
+    score: 0
   }
 
   handleChange = (e) => {
@@ -33,25 +35,27 @@ class Tables extends React.Component {
 
   checkEntry = () => {
     var answer = this.state.firstNum * this.state.secondNum
-    this.setState({ answer: answer })
     if (parseInt(this.state.entry[0]) === answer) {
-      this.setState({ isCorrect: true, entry: '' })
-      setTimeout(this.resetQuestion, 500)
+      this.setState({ isCorrect: true, entry: '', score: this.state.score + 10 })
+      setTimeout(this.generateQuestion, 500)
     } else {
-      this.setState({ isCorrect: false, entry: '' })
-      setTimeout(this.resetQuestion, 1500)
+      this.setState({ isCorrect: false, entry: '', score: this.state.score - 5 })
+      setTimeout(this.generateQuestion, 1500)
     }
   }
 
-  resetQuestion = () => {
+  generateQuestion = () => {
     this.setState({ secondNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)] })
     this.setState({ isCorrect: undefined })
+    var answer = this.state.firstNum * this.state.secondNum
+    this.setState({ answer: answer })
   }
 
   render () {
     return (
       <div className='container'>
         <Home />
+        <Score score={this.state.score}/>
         <div className='tables-container'>
           <div className='question-container' onKeyDown={this.handleEnter}>
             <p>What is {this.state.firstNum} x {this.state.secondNum}?</p>

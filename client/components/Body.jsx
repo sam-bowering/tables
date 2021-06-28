@@ -25,12 +25,12 @@ class Body extends React.Component {
     return (
       <div className='container'>
         {this.state.welcomeIsVisible &&
-          <div onMouseEnter={this.handleWelcomeFade} style={{ width: '30vw', height: '60vh' }}>
+          <div className='welcome-container' onMouseEnter={this.handleWelcomeFade}>
             <Welcome />
           </div>
         }
         {this.state.choiceIsVisible &&
-          <div onMouseLeave={this.handleChoiceFade} style={{ width: '30vw', height: '60vh' }}>
+          <div className='choice-container' onMouseLeave={this.handleChoiceFade} style={{ width: 'fit-content', height: 'fit-content' }}>
             <Choice />
           </div>
         }

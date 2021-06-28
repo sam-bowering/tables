@@ -68,7 +68,7 @@
   width: 30vw;
   position: relative;
   top: 25vh;
-  left: 35vw;
+  left: 30vw;
   border-radius: 15px;
   display: inline-block;
 }
@@ -126,4 +126,28 @@
   top: 20vh;
   border-radius: 15px;
   display: inline-block;
+}
+
+.score-container {
+  height: 15vh;
+  width: 7vw;
+  background-color: white;
+  color: black;
+  font-family: 'PT Sans', sans-serif;
+  position: absolute;
+  left: 90vw;
+  bottom: 82vh;
+  border-radius: 15px;
+}
+
+.score-container p {
+  position: relative;
+  left: 0.5vw;
+  font-size: 3vh;  
+}
+
+.score-container h1 {
+  position: relative;
+  text-align: center;
+  top: 2vh;
 }
