@@ -19,7 +19,8 @@ class Tables extends React.Component {
     entry: '',
     answer: '',
     isCorrect: undefined,
-    score: 0
+    score: 0,
+    completed: []
   }
 
   handleChange = (e) => {
@@ -45,10 +46,20 @@ class Tables extends React.Component {
   }
 
   generateQuestion = () => {
+    this.updateNumbers()
     this.setState({ secondNum: this.state.numbers[Math.floor(Math.random() * this.state.numbers.length)] })
     this.setState({ isCorrect: undefined })
     var answer = this.state.firstNum * this.state.secondNum
     this.setState({ answer: answer })
+  }
+
+  updateNumbers = () => {
+    if (this.state.numbers.length > 1) {
+      this.setState({ numbers: [...this.state.numbers.filter(num => num !== this.state.secondNum)] })
+    } else {
+      this.setState({ numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] })
+      this.generateQuestion()
+    }
   }
 
   render () {
