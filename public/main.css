@@ -27,7 +27,7 @@
 }
 
 .menu-container {
-  height: 60vh;
+  height: fit-content;
   width: 30vw;
   background-color: white;
   position: relative;
@@ -38,16 +38,15 @@
 
 .menu-container span {
   position: relative;
-  top: 5vh;
   left: 4vw;
   font-size: 5vw;
   font-family: 'Dancing Script', cursive;
 }
-
+/* 
 .button-container {
   position: relative;
   top: 5vh;
-}
+} */
 
 .button-container button {
   position: relative;

@@ -16,6 +16,7 @@ class Menu extends React.Component {
           <div className='button-container'>
             {this.state.tables.map(i =>
               <Link key={i} to={`/tables/:${i}`}><button type='button'>{i}</button></Link>)}
+            <Link key={'All'} to={'/tables/all'}><button type='button' style={{ width: '25vw' }}>All</button></Link>
           </div>
         </div>
       </div>
