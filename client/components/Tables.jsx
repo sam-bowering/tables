@@ -45,12 +45,18 @@ class Tables extends React.Component {
   // 3. Handles All Answering Functionality - Calls generateQuestion
   checkEntry = () => {
     const { answer } = this.state.question
-    if (parseInt(this.state.entry[0]) === answer) {
-      this.setState({ isCorrect: true, entry: '', score: this.state.score + 10 })
+    const { score, numbers } = this.state
+    const entry = parseInt(this.state.entry[0])
+    if (entry === answer) { // Answer is correct. Generate new question.
+      this.setState({ isCorrect: true, entry: '', score: score + 10 })
       this.updateNumbers()
       setTimeout(this.generateQuestion, 500)
-    } else {
-      this.setState({ isCorrect: false, entry: '', score: this.state.score - 5 })
+    } else if (entry !== answer && numbers.length === 1) { // Last answer is incorrect. Generate new list for seamless crossover to new question.
+      this.updateNumbers()
+      this.setState({ isCorrect: false, entry: '', score: score - 5 })
+      setTimeout(this.generateQuestion, 1500)
+    } else { // Answer is incorrect (Not last answer). Generate new question.
+      this.setState({ isCorrect: false, entry: '', score: score - 5 })
       this.updateNumbers()
       setTimeout(this.generateQuestion, 1500)
     }
